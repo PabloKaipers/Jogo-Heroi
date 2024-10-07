@@ -1,33 +1,48 @@
-class Heroi:
-    def __init__(self, nome, idade, tipo):
-        self.nome = nome
-        self.idade = idade
-        self.tipo = tipo
+class Heroi {
+    constructor(nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
 
-    def atacar(self):
-        if self.tipo == "mago":
-            ataque = "magia"
-        elif self.tipo == "guerreiro":
-            ataque = "espada"
-        elif self.tipo == "monge":
-            ataque = "artes marciais"
-        elif self.tipo == "ninja":
-            ataque = "shuriken"
-        else:
-            ataque = "ataque desconhecido"
-        
-        print(f"o {self.tipo} atacou usando {ataque}")
+    atacar(tipoAtaque) {
+        let ataque;
 
+        switch (tipoAtaque) {
+            case "1":
+                ataque = "magia";
+                break;
+            case "2":
+                ataque = "espada";
+                break;
+            case "3":
+                ataque = "artes marciais";
+                break;
+            case "4":
+                ataque = "shuriken";
+                break;
+            default:
+                ataque = "ataque desconhecido";
+        }
 
-# Exemplo de uso da classe
-heroi1 = Heroi("Gandalf", 300, "mago")
-heroi1.atacar()  # Saída: o mago atacou usando magia
+        console.log(`o ${this.tipo} atacou usando ${ataque}`);
+    }
+}
 
-heroi2 = Heroi("Conan", 35, "guerreiro")
-heroi2.atacar()  # Saída: o guerreiro atacou usando espada
+function escolherAtaque(heroi) {
+    const tipoAtaque = prompt("Escolha o tipo de ataque:\n1 - Mago (magia)\n2 - Guerreiro (espada)\n3 - Monge (artes marciais)\n4 - Ninja (shuriken)");
 
-heroi3 = Heroi("Lao Tzu", 100, "monge")
-heroi3.atacar()  # Saída: o monge atacou usando artes marciais
+    heroi.atacar(tipoAtaque);
+}
 
-heroi4 = Heroi("Naruto", 17, "ninja")
-heroi4.atacar()  # Saída: o ninja atacou usando shuriken
+const heroi1 = new Heroi("Gandalf", 300, "mago");
+escolherAtaque(heroi1);  // Saída baseada na escolha do usuário
+
+const heroi2 = new Heroi("Conan", 35, "guerreiro");
+escolherAtaque(heroi2);  // Saída baseada na escolha do usuário
+
+const heroi3 = new Heroi("Lao Tzu", 100, "monge");
+escolherAtaque(heroi3);  // Saída baseada na escolha do usuário
+
+const heroi4 = new Heroi("Naruto", 17, "ninja");
+escolherAtaque(heroi4);  // Saída baseada na escolha do usuário
